@@ -25,7 +25,7 @@ public class ReceiveServer extends Thread {
 
     public void run()
     {
-        logger.info("Thread,run");
+        logger.info("Thread-run");
     }
 
 }
