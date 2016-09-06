@@ -57,8 +57,8 @@ public abstract class AbstractStorageDaemon implements Daemon {
             logger.error(msg, e);
 
             // try to warn user on stdout too, if we haven't already detached
-            System.out.println(msg);
-            e.printStackTrace();
+//            System.out.println(msg);
+//            e.printStackTrace();
 
             System.exit(3);
         }
