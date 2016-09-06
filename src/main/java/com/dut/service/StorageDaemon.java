@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Created by guo on 9/6/16.
+ *
  */
 public class StorageDaemon extends AbstractStorageDaemon {
 
@@ -13,6 +14,9 @@ public class StorageDaemon extends AbstractStorageDaemon {
     public void startServer()
     {
         logger.info("startServer");
+        //if runnable better than thread
+        ReceiveServer receiveServer = new ReceiveServer();
+        receiveServer.start();
 
     }
 
