@@ -6,13 +6,19 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by guo on 9/6/16.
  */
-public class StorageDaemon {
+public class StorageDaemon extends AbstractStorageDaemon {
+
     private static Logger logger = LoggerFactory.getLogger(StorageDaemon.class);
+
+    public void startServer()
+    {
+        logger.info("startServer");
+
+    }
 
     public static void main(String[] args)
     {
-        logger.info("test");
-//        new StorageDaemon().activate();
+        new StorageDaemon().activate();
     }
 
 }
