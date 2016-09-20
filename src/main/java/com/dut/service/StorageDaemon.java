@@ -15,14 +15,28 @@ public class StorageDaemon extends AbstractStorageDaemon {
     {
         logger.info("startServer");
         //if runnable better than thread
-        ReceiveServer receiveServer = new ReceiveServer();
-        receiveServer.start();
+//        ReceiveServer receiveServer = new ReceiveServer();
+//        receiveServer.start();
+            StageManager.getStage(Stage.READ).execute(new Runnable() {
+                public void run() {
+                    try {
+                        logger.info("start-run");
+                        Thread.sleep(1000);
+                        logger.info("end-run");
+                    }catch (Exception e){
+                        logger.error("err");
+                    }
+                }
+            });
+
+        logger.info("endServer");
 
     }
 
     public static void main(String[] args)
     {
         new StorageDaemon().activate();
+        System.exit(1);
     }
 
 }
